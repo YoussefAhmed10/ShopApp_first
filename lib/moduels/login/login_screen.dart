@@ -205,6 +205,8 @@ class LogInScreen extends StatelessWidget {
                             ),
                             //For Git Things
                             Container(child: Text('add some text')),
+                            Container(child: Text('add some text2')),
+                            Container(child: Text('add some text3')),
                           ],
                         ),
                       ],
