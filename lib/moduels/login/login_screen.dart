@@ -8,9 +8,9 @@ import 'package:shopapp/moduels/login/cubitLogin/statesLogin.dart';
 import 'package:shopapp/moduels/register/reigsterscreen.dart';
 import 'package:shopapp/shared/local/componante.dart';
 
-class LogInScreen extends StatelessWidget {
-  var formKey = GlobalKey<FormState>();
+var formKey = GlobalKey<FormState>();
 
+class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
@@ -203,13 +203,6 @@ class LogInScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            //For Git Things
-                            Container(child: Text('add some text')),
-                            Container(child: Text('add some text2')),
-                            Container(child: Text('add some text3')),
-                            Container(child: Text('add some text3')),
-                            Container(child: Text('add some text5')),
-                            Container(child: Text('add some text36')),
                           ],
                         ),
                       ],

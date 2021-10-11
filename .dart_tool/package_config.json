@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.6.1",
+      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -27,7 +27,7 @@
     },
     {
       "name": "charcode",
-      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0",
+      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -117,7 +117,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.3.0",
+      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -183,7 +183,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
+      "rootUri": "file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,7 +206,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-08-16T17:38:32.983778Z",
+  "generated": "2021-10-07T14:52:12.658121Z",
   "generator": "pub",
-  "generatorVersion": "2.13.4"
+  "generatorVersion": "2.14.3"
 }
