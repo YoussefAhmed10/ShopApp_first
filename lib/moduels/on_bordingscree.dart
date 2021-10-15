@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopapp/models/bordingModel.dart';
 import 'package:shopapp/moduels/login/login_screen.dart';
 import 'package:shopapp/shared/local/componante.dart';
+import 'package:shopapp/shared/remote/cache_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -31,17 +32,25 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         body: 'Screen Body 3',
       ),
     ];
+    void submit() {
+      CacheHelper.saveDate(
+        key: 'onBoarding',
+        value: true,
+      ).then((value) {
+        if (value) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => LogInScreen()),
+          );
+        }
+      });
+    }
 
     return Scaffold(
       appBar: AppBar(
         actions: [
           TextButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LogInScreen()),
-              );
-            },
+            onPressed: submit,
             child: Text(
               'SKIP',
               style: TextStyle(
@@ -93,10 +102,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 FloatingActionButton(
                   onPressed: () {
                     if (isLast == true) {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LogInScreen()),
-                      );
+                      submit();
                     } else {
                       boardcontroller.nextPage(
                         duration: Duration(seconds: 1),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopapp/models/bordingModel.dart';
+import 'package:oktoast/oktoast.dart';
 
+//BoardingModel
 Widget buildOnBoardingItem(BoardingModel model) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,6 +33,7 @@ Widget buildOnBoardingItem(BoardingModel model) {
   );
 }
 
+//TextFormField
 Widget defaultTextFormField({
   required TextEditingController controller,
   required TextInputType type,
@@ -61,6 +64,55 @@ Widget defaultTextFormField({
         child: Icon(suffix),
       ),
       border: border,
+    ),
+  );
+}
+
+//OKTOASTSHOW
+void toastShow({
+  required String text,
+  required ToastState state,
+}) {
+  showToast(
+    text,
+    textAlign: TextAlign.center,
+    duration: Duration(seconds: 2),
+    position: ToastPosition.bottom,
+    backgroundColor: chooseColorToast(state),
+    radius: 15.0,
+    textStyle: TextStyle(
+      decoration: TextDecoration.none,
+      fontSize: 15.0,
+      color: Colors.white,
+    ),
+  );
+}
+
+enum ToastState { SUCSESS, ERROR, WARNING }
+
+Color chooseColorToast(ToastState state) {
+  Color color;
+  switch (state) {
+    case ToastState.SUCSESS:
+      color = Colors.green;
+      break;
+    case ToastState.ERROR:
+      color = Colors.red;
+      break;
+    case ToastState.WARNING:
+      color = Colors.amber;
+  }
+  return color;
+}
+
+//NavigatorAndPushReplacment
+navigateAndFinish(context, Widget screen) {
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (context) {
+        return screen;
+      },
     ),
   );
 }
