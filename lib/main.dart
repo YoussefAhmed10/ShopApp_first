@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopapp/layout/cubit/cubit.dart';
 import 'package:shopapp/layout/shoplayout.dart';
 import 'package:shopapp/moduels/login/login_screen.dart';
 import 'package:shopapp/moduels/on_bordingscree.dart';
@@ -21,9 +23,7 @@ void main() async {
 
   print(onBoarding);
 
-  // ignore: unnecessary_null_comparison
   if (onBoarding != null) {
-    // ignore: unnecessary_null_comparison
     if (token != null) {
       screenST = LayoutScreen();
     } else {
@@ -44,11 +44,16 @@ class MyApp extends StatelessWidget {
   const MyApp({required this.startwidget});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'shop App',
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      home: startwidget,
+    return BlocProvider(
+      create: (BuildContext context) => ShopCubit()
+        ..getHomeData()
+        ..getCategories(),
+      child: MaterialApp(
+        title: 'shop App',
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        home: startwidget,
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/models/bordingModel.dart';
+import 'package:shopapp/models/onboardngmodel/bordingModel.dart';
 import 'package:shopapp/moduels/login/login_screen.dart';
 import 'package:shopapp/shared/local/componante.dart';
 import 'package:shopapp/shared/remote/cache_helper.dart';

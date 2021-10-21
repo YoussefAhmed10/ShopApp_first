@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp/models/bordingModel.dart';
+import 'package:shopapp/models/onboardngmodel/bordingModel.dart';
 import 'package:oktoast/oktoast.dart';
 
 //BoardingModel
@@ -108,6 +108,18 @@ Color chooseColorToast(ToastState state) {
 //NavigatorAndPushReplacment
 navigateAndFinish(context, Widget screen) {
   Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (context) {
+        return screen;
+      },
+    ),
+  );
+}
+
+//NavigatorTo
+navigateTo(context, Widget screen) {
+  Navigator.push(
     context,
     MaterialPageRoute(
       builder: (context) {

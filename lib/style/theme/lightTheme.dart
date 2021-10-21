@@ -32,4 +32,13 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: Colors.blue,
   ),
   textTheme: TextTheme(),
+  //BottomNavigationBarStyle
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    selectedItemColor: Colors.blue,
+    unselectedItemColor: Colors.grey,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+    type: BottomNavigationBarType.fixed,
+    elevation: 20.0,
+  ),
 );
