@@ -50,6 +50,10 @@ file
 2.12
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib/
+fl_toast
+2.12
+file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fl_toast-3.1.0/
+file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fl_toast-3.1.0/lib/
 flutter_bloc
 2.12
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-7.0.1/
@@ -78,10 +82,6 @@ nested
 2.12
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/lib/
-oktoast
-2.12
-file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/oktoast-3.1.3+1/
-file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/oktoast-3.1.3+1/lib/
 path
 2.12
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0/
@@ -199,7 +199,7 @@ flutter_web_plugins
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/packages/flutter_web_plugins/
 file:///D:/Androide/flutter_windows_1.20.2-stable/flutter/packages/flutter_web_plugins/lib/
 shopapp
-2.12
+2.14
 file:///D:/new%20course%20dart%20and%20flutter%20arbe/course%20with%20abdllaa/flutter%20projects/shopapp/
 file:///D:/new%20course%20dart%20and%20flutter%20arbe/course%20with%20abdllaa/flutter%20projects/shopapp/lib/
 2

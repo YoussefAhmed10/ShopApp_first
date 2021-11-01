@@ -5,6 +5,7 @@ import 'package:shopapp/layout/cubit/cubit.dart';
 import 'package:shopapp/layout/shoplayout.dart';
 import 'package:shopapp/moduels/login/login_screen.dart';
 import 'package:shopapp/moduels/on_bordingscree.dart';
+import 'package:shopapp/shared/local/constance.dart';
 import 'package:shopapp/shared/remote/bloc-observer.dart';
 import 'package:shopapp/shared/remote/cache_helper.dart';
 import 'package:shopapp/shared/remote/dio_helper.dart';
@@ -19,9 +20,8 @@ void main() async {
   Widget screenST;
 
   late bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
-  String? token = CacheHelper.getData(key: 'token');
-
-  print(onBoarding);
+  token = CacheHelper.getData(key: 'token');
+  print(token);
 
   if (onBoarding != null) {
     if (token != null) {
@@ -47,7 +47,9 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => ShopCubit()
         ..getHomeData()
-        ..getCategories(),
+        ..getCategories()
+        ..getFavorites()
+        ..getUserData(),
       child: MaterialApp(
         title: 'shop App',
         debugShowCheckedModeBanner: false,

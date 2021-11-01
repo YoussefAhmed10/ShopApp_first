@@ -92,7 +92,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   count: boarding.length,
                   effect: ExpandingDotsEffect(
                     dotColor: Colors.grey,
-                    activeDotColor: Colors.blue,
+                    activeDotColor: Colors.deepOrange,
                     spacing: 7.0,
                     dotHeight: 12,
                     dotWidth: 12,
@@ -100,6 +100,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
                 Spacer(),
                 FloatingActionButton(
+                  backgroundColor: Colors.deepOrange,
                   onPressed: () {
                     if (isLast == true) {
                       submit();

@@ -2,7 +2,7 @@ import 'package:shopapp/moduels/login/login_screen.dart';
 import 'package:shopapp/shared/local/componante.dart';
 import 'package:shopapp/shared/remote/cache_helper.dart';
 
-void signOut(context) {
+dynamic signOut(context) {
   CacheHelper.removeData(key: 'token').then(
     (value) {
       if (value) {
@@ -20,4 +20,4 @@ void printFullText(String text) {
   pattern.allMatches(text).forEach((match) => print(match.group(0)));
 }
 
-const token = '';
+String? token = '';

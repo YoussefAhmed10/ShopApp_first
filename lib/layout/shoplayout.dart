@@ -29,6 +29,8 @@ class LayoutScreen extends StatelessWidget {
           ),
           body: cubit.bottomSceerns[cubit.currentindex],
           bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: Colors.deepOrange,
+            unselectedItemColor: Colors.black54,
             onTap: (index) {
               cubit.changeBottom(index);
             },
@@ -50,7 +52,7 @@ class LayoutScreen extends StatelessWidget {
                 icon: Icon(
                   Icons.favorite,
                 ),
-                label: "Favotires",
+                label: "Favorites",
               ),
               BottomNavigationBarItem(
                 icon: Icon(

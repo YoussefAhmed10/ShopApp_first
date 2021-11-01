@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 ThemeData lightTheme = ThemeData(
-  primarySwatch: Colors.blue,
+  primarySwatch: Colors.deepOrange,
   //appBarTheme
   appBarTheme: AppBarTheme(
     titleSpacing: 20.0,
@@ -29,10 +29,9 @@ ThemeData lightTheme = ThemeData(
   fontFamily: 'Karla',
   //fabTheme
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.deepOrange,
   ),
   textTheme: TextTheme(),
-  //BottomNavigationBarStyle
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     selectedItemColor: Colors.blue,
     unselectedItemColor: Colors.grey,

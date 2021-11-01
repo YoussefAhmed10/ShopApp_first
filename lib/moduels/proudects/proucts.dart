@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/conditional.dart';
@@ -7,6 +6,7 @@ import 'package:shopapp/layout/cubit/cubit.dart';
 import 'package:shopapp/layout/cubit/states.dart';
 import 'package:shopapp/models/categoriesModel/categoriesModel.dart';
 import 'package:shopapp/models/homemodel/homemodel.dart';
+import 'package:shopapp/shared/local/componante.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({Key? key}) : super(key: key);
@@ -14,26 +14,38 @@ class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ShopCubit, ShopStates>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return Conditional.single(
-            context: context,
-            conditionBuilder: (context) =>
-                ShopCubit.get(context).homeModel != null &&
-                ShopCubit.get(context).categoriesModel != null,
-            widgetBuilder: (context) => producsBuilder(
+      listener: (context, state) {
+        if (state is ShopSucessChangeFavoritesDataState) {
+          if (!state.model.status!) {
+            toastShow(
+              text: state.model.message!,
+              state: ToastStates.ERROR,
+              context: context,
+            );
+          }
+        }
+      },
+      builder: (context, state) {
+        return Conditional.single(
+          context: context,
+          conditionBuilder: (context) =>
+              ShopCubit.get(context).homeModel != null &&
+              ShopCubit.get(context).categoriesModel != null,
+          widgetBuilder: (context) => producsBuilder(
               ShopCubit.get(context).homeModel!,
               ShopCubit.get(context).categoriesModel!,
-            ),
-            fallbackBuilder: (context) => Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
-        });
+              context),
+          fallbackBuilder: (context) => Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      },
+    );
   }
 }
 
-Widget producsBuilder(HomeModel model, CategoriesModel categoriesModel) {
+Widget producsBuilder(
+    HomeModel model, CategoriesModel categoriesModel, context) {
   return SingleChildScrollView(
     physics: BouncingScrollPhysics(),
     child: Column(
@@ -115,7 +127,7 @@ Widget producsBuilder(HomeModel model, CategoriesModel categoriesModel) {
             childAspectRatio: 1 / 1.4,
             children: List.generate(
               model.data!.products.length,
-              (index) => buildGridProduct(model.data!.products[index]),
+              (index) => buildGridProduct(model.data!.products[index], context),
             ),
           ),
         ),
@@ -152,7 +164,7 @@ Widget buildCategories(DataModel model) => Stack(
       ],
     );
 
-Widget buildGridProduct(ProductModel model) => Container(
+Widget buildGridProduct(ProductModel model, context) => Container(
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,9 +237,21 @@ Widget buildGridProduct(ProductModel model) => Container(
                       ),
                     Spacer(),
                     IconButton(
-                      icon: Icon(Icons.favorite_border),
-                      iconSize: 18,
-                      onPressed: () {},
+                      onPressed: () {
+                        ShopCubit.get(context).changeFavorites(model.id!);
+                      },
+                      icon: CircleAvatar(
+                        backgroundColor:
+                            ShopCubit.get(context).favorites[model.id]!
+                                ? Colors.deepOrange
+                                : Colors.black45,
+                        radius: 18,
+                        child: Icon(
+                          Icons.favorite_border,
+                          color: Colors.white,
+                          size: 17,
+                        ),
+                      ),
                     ),
                   ],
                 ),
