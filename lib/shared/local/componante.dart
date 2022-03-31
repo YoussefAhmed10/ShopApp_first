@@ -38,7 +38,7 @@ Widget buildOnBoardingItem(BoardingModel model) {
 Widget defaultTextFormField({
   required TextEditingController controller,
   required TextInputType type,
-  required Function validate,
+  required dynamic validate,
   required String label,
   TextStyle? labelStyle,
   required IconData prefix,
@@ -54,7 +54,7 @@ Widget defaultTextFormField({
     controller: controller,
     onChanged: (onChanged) {},
     keyboardType: type,
-    validator: (validate) {},
+    validator: validate,
     onFieldSubmitted: (onSubmit) {},
     obscureText: isPassword,
     decoration: InputDecoration(

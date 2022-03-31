@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopapp/layout/cubit/cubit.dart';
@@ -16,7 +15,6 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();
-
   Widget screenST;
 
   late bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
