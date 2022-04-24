@@ -1,4 +1,4 @@
-#Mon Nov 01 03:45:33 EET 2021
+#Sun Apr 03 16:52:16 EET 2022
 base.0=D\:\\new course dart and flutter arbe\\course with abdllaa\\flutter projects\\shopapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

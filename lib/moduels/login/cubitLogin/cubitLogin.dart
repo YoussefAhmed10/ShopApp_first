@@ -19,12 +19,12 @@ class ShopLoginCubit extends Cubit<ShopLogInStates> {
     suffix = isPasswordShow
         ? Icons.visibility_outlined
         : Icons.visibility_off_outlined;
-
     emit(ShopChangePasswordVisibilityState());
   }
 
   void userLogin({
     required String email,
+
     required String password,
   }) {
     emit(ShopLoadingLoginState());
@@ -35,7 +35,7 @@ class ShopLoginCubit extends Cubit<ShopLogInStates> {
         'password': password,
       },
     ).then((value) {
-      print(value.data);
+      // print(value.data);
       loginModel = ShopLoginModel.fromJson(value.data);
       emit(ShopSucsessfulLoginState(loginModel));
     }).catchError(
